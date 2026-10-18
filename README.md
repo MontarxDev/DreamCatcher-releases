@@ -9,6 +9,7 @@ This repository holds release downloads only. The source code is private.
 - AppImage: [DreamCatcher_0.2.0_amd64.AppImage](https://github.com/MontarxDev/DreamCatcher-releases/releases/latest/download/DreamCatcher_0.2.0_amd64.AppImage)
 - Debian/Ubuntu/Mint package (.deb): coming soon on the [releases page](https://github.com/MontarxDev/DreamCatcher-releases/releases/latest)
 - Checksums: [SHA256SUMS](https://github.com/MontarxDev/DreamCatcher-releases/releases/latest/download/SHA256SUMS)
+- Signatures: [AppImage.minisig](https://github.com/MontarxDev/DreamCatcher-releases/releases/latest/download/DreamCatcher_0.2.0_amd64.AppImage.minisig), [SHA256SUMS.minisig](https://github.com/MontarxDev/DreamCatcher-releases/releases/latest/download/SHA256SUMS.minisig) · public key: [minisign.pub](minisign.pub)
 
 All releases: https://github.com/MontarxDev/DreamCatcher-releases/releases
 
@@ -29,11 +30,28 @@ If it won't start, install FUSE 2 (`sudo apt install libfuse2t64` on Ubuntu 24.0
 sudo apt install ./DreamCatcher_0.2.0_amd64.deb
 ```
 
-## Verify the download
+## Verify your download
+
+Every release file is signed with the DreamCatcher release key ([minisign.pub](minisign.pub)):
+
+```
+RWTTrK4Sb8jW9O8sAYqUL8TRqlE3W41qXqdESN9Kmh3xl78Pk43GvPk5
+```
+
+Install minisign (`sudo apt install minisign`), download the files you want plus `SHA256SUMS`, `SHA256SUMS.minisig` and the matching `.minisig` files from the release, then run:
 
 ```bash
+# 1. Check the checksum list is genuine
+minisign -Vm SHA256SUMS -P RWTTrK4Sb8jW9O8sAYqUL8TRqlE3W41qXqdESN9Kmh3xl78Pk43GvPk5
+
+# 2. Check your download matches it
 sha256sum -c SHA256SUMS --ignore-missing
+
+# 3. (Optional) Check the file's own signature
+minisign -Vm DreamCatcher_0.2.0_amd64.AppImage -P RWTTrK4Sb8jW9O8sAYqUL8TRqlE3W41qXqdESN9Kmh3xl78Pk43GvPk5
 ```
+
+Each command should print `Signature and comment signature verified` or `OK`. If any check fails, don't run the file.
 
 | File | SHA-256 |
 |---|---|

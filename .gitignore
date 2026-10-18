@@ -1,0 +1,4 @@
+*.minisig
+*.key
+.dc-signing/
+password
