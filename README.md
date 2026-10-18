@@ -7,9 +7,9 @@ This repository holds release downloads only. The source code is private.
 ## Download (v0.2.0)
 
 - AppImage: [DreamCatcher_0.2.0_amd64.AppImage](https://github.com/MontarxDev/DreamCatcher-releases/releases/latest/download/DreamCatcher_0.2.0_amd64.AppImage)
-- Debian/Ubuntu/Mint package (.deb): coming soon on the [releases page](https://github.com/MontarxDev/DreamCatcher-releases/releases/latest)
+- Debian/Ubuntu/Mint package: [DreamCatcher_0.2.0_amd64.deb](https://github.com/MontarxDev/DreamCatcher-releases/releases/latest/download/DreamCatcher_0.2.0_amd64.deb)
 - Checksums: [SHA256SUMS](https://github.com/MontarxDev/DreamCatcher-releases/releases/latest/download/SHA256SUMS)
-- Signatures: [AppImage.minisig](https://github.com/MontarxDev/DreamCatcher-releases/releases/latest/download/DreamCatcher_0.2.0_amd64.AppImage.minisig), [SHA256SUMS.minisig](https://github.com/MontarxDev/DreamCatcher-releases/releases/latest/download/SHA256SUMS.minisig) · public key: [minisign.pub](minisign.pub)
+- Signatures: [AppImage.minisig](https://github.com/MontarxDev/DreamCatcher-releases/releases/latest/download/DreamCatcher_0.2.0_amd64.AppImage.minisig), [deb.minisig](https://github.com/MontarxDev/DreamCatcher-releases/releases/latest/download/DreamCatcher_0.2.0_amd64.deb.minisig), [SHA256SUMS.minisig](https://github.com/MontarxDev/DreamCatcher-releases/releases/latest/download/SHA256SUMS.minisig) · public key: [minisign.pub](minisign.pub)
 
 All releases: https://github.com/MontarxDev/DreamCatcher-releases/releases
 
@@ -47,7 +47,7 @@ minisign -Vm SHA256SUMS -P RWTTrK4Sb8jW9O8sAYqUL8TRqlE3W41qXqdESN9Kmh3xl78Pk43Gv
 # 2. Check your download matches it
 sha256sum -c SHA256SUMS --ignore-missing
 
-# 3. (Optional) Check the file's own signature
+# 3. (Optional) Check the file's own signature (AppImage or .deb)
 minisign -Vm DreamCatcher_0.2.0_amd64.AppImage -P RWTTrK4Sb8jW9O8sAYqUL8TRqlE3W41qXqdESN9Kmh3xl78Pk43GvPk5
 ```
 
@@ -55,7 +55,8 @@ Each command should print `Signature and comment signature verified` or `OK`. If
 
 | File | SHA-256 |
 |---|---|
-| DreamCatcher_0.2.0_amd64.AppImage | `d5fdbc67fd053c5f0af023286f1fc532319ec91ea3be47809a74d9962edfc55e` |
+| DreamCatcher_0.2.0_amd64.AppImage | `8b84f0d41edda9c968ccd1d67646017a1c05fb50d22887a5b4744b2125c56547` |
+| DreamCatcher_0.2.0_amd64.deb | `fedc6b611e6df06ffaa5ede555a1e44ca0c68fdf498fa43965cbc0eda56dfce8` |
 
 ## Update feed
 
